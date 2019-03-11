@@ -9,7 +9,7 @@ const User = require('./models/user');
 const routes = require('./routes');
 const app = express();
 // const MONGODB_URI = 'mongodb://localhost/eventify';
-const MONGODB_URI = 'mongodb://nodeapp:node123@ds155815.mlab.com:55815/eventify';
+const MONGODB_URI = process.env.mongodb_uri;
 const PORT = process.env.PORT || 8080;
 const store = new MongoDBStore({
   uri: MONGODB_URI,
