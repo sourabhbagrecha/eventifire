@@ -1,0 +1,51 @@
+<%- include ../partials/head.ejs %>
+<%- include ../partials/header.ejs %>
+<div class="container">
+  <form action="/organizer/new" method="post">
+    <div class="container bg-light rounded" style="max-width: 40rem;">
+      <h1 class="pt-2">Create Your Event Here</h1><hr>
+      <div class="form-group">
+          <label>Name:</label>
+          <input name="name" type="text" class="form-control" placeholder="Choose an exciting name for your event" required>
+        </div>
+        <div class="form-row">
+          <label>Location:</label>
+          <div class="form-group col-12">
+            <input name="address" type="text" class="form-control" placeholder="Address" required>
+          </div>
+          <div class="form-group col-md-6">
+            <input name="city" type="text" class="form-control" placeholder="City" required>
+          </div>
+          <div class="form-group col-md-6">
+            <input name="state" type="text" class="form-control" placeholder="State" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>Date:</label>
+            <input type="date" name="date" class="form-control" min="2019-03-12" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label>Time:<span style="font-size: 0.9rem"> (Format: 09:00 PM)</span></label>
+            <input type="time" name="date" class="form-control" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Poster:</label>
+          <input name="poster" type="url" class="form-control" placeholder="Enter the image url for the event." required>
+        </div>
+        <div class="form-group">
+          <label>Description:</label>
+          <textarea name="description" cols="30" rows="10" class="form-control" placeholder="Describe your event in detail." required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Entry Fees:</label>
+          <input name="fees" type="number" class="form-control" placeholder="in Rupees" required>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Submit" class="form-control btn btn-block btn-primary">
+        </div>
+    </div>
+  </form>
+</div>
+<%- include ../partials/footer.ejs %>

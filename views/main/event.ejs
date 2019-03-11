@@ -1,0 +1,30 @@
+<%- include ../partials/head.ejs%>
+<style>
+  .info{
+    font-size: 1.6rem;
+  }
+</style>
+<%- include ../partials/header.ejs%>
+<% const MONTHIFY = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']%>
+<% const date = new Date(event.dateAndTime) %>
+<div class="container">
+  <div class="jumbotron p-4">
+    <h1><%= event.name %></h1>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <img src="<%= event.poster %>" alt="<%= event.name %>" class="rounded" style="width: 100%;" >
+    </div>
+    <div class="col-md-4">
+      <p class="lead info"><strong><i class="fas fa-calendar-alt"></i>:</strong> <%= MONTHIFY[date.getMonth()+1] %> <%= date.getDay() %>, <%= date.getYear()+1900 %></p>
+      <p class="lead info"><strong><i class="fas fa-clock"></i>:</strong> <%= date.getHours() %>:<%= date.getMinutes() %></p>
+      <p class="lead info"><strong><i class="fas fa-compass"></i></strong>: <%= event.address %>,<br><%= event.city %>,<%= event.state%></p>
+      <p class="lead info"><strong><i class="fas fa-rupee-sign"></i></strong>: <%= event.fees %></p>
+      <p class="lead info"><strong><i class="far fa-user"></i></strong>: <%= event.creator.name.first %> <%= event.creator.name.last %></p>
+    </div>
+  </div>
+  <p class="lead mt-3">
+    <%= event.description %>
+  </p>
+</div>
+<%- include ../partials/footer.ejs%>
