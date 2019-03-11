@@ -3,14 +3,14 @@
 <% const MONTHIFY = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']%>
 <div class="container">
   <div class="jumbotron p-5">
-    <h1>Welcome to Eventify</h1>
+    <h1>Welcome to Eventifire</h1>
   </div>
   <% if(events){ %>
   <div id="explore" class="row mt-5">
     <% events.forEach(e => { %>
       <% const date = new Date(e.dateAndTime) %>
-        <div class="col-md-6 mt-2">
-            <div class="container bg-light">
+        <div class="col-md-6 mt-5">
+            <div class="container bg-light p-2">
               <h3><%= e.name %></h3>
               <img class="rounded mb-2" src="<%= e.poster %>" style="width: 100%;" alt="<%= e.name %>">
               <span class="mr-auto"><%= MONTHIFY[date.getMonth()] %> <%= date.getDate() %>, <%= date.getYear()+1900 %></span>
@@ -20,5 +20,8 @@
       <% }) %>
     </div>
   <% } %>
+  <div class="jumbotron p-4">
+    <p>Wanna host your event on eventifire? <a href="/auth/signup">Signup</a> Today!</p>
+  </div>
 </div>
 <%- include ../partials/footer.ejs%>
